@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class TradeRecordsController < ApplicationController
   before_action :set_category
 
