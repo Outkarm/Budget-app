@@ -34,7 +34,7 @@
 
 **[Buget App]** is a classic example of a blog website. It is a functional website that show the list of Categories and associated operations to each categories.
 
-**[Video Description](https://drive.google.com/file/d/1R-GI7cmCG04wLd3bvoDH8fmlJsp5wSMx/view?usp=sharing)**
+**[Video Description](https://drive.google.com/file/d/1lhM4nSxvtecybPoeIOcE5Ux6-ZihnhW_/view?usp=sharing)**
 
 ## 🛠 Built With <a name="built-with"></a>
 
