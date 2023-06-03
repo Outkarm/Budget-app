@@ -34,7 +34,7 @@
 
 **[Buget App]** is a classic example of a blog website. It is a functional website that show the list of Categories and associated operations to each categories.
 
-**[Video Description](https://drive.google.com/file/d/1R-GI7cmCG04wLd3bvoDH8fmlJsp5wSMx/view?usp=drive_link)**
+**[Video Description](https://drive.google.com/file/d/1R-GI7cmCG04wLd3bvoDH8fmlJsp5wSMx/view?usp=sharing)**
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -189,7 +189,7 @@ If you like this project then please do follow me and give a star to this repo.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for giving me the opportunity to embark on this project. I would also like to thank everyone who supported me in making this project a reality.
+I would like to thank [Gregoire Vella on Behance](https://www.behance.net/gregoirevella) the [author of the original design](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -211,6 +211,6 @@ I would like to thank Microverse for giving me the opportunity to embark on this
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./MIT.md) licensed.
+This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
