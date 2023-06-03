@@ -3,6 +3,7 @@
 <div align="center">
   <img src="logo.PNG" alt="logo" width="auto"  height="auto" />
   <br/>
+  </div>
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
