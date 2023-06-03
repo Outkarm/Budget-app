@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_230_530_185_411) do
+ActiveRecord::Schema[7.0].define(version: 20_230_602_111_840) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -21,6 +21,16 @@ ActiveRecord::Schema[7.0].define(version: 20_230_530_185_411) do
     t.string 'icon'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
+    t.bigint 'user_id', null: false
+    t.index ['user_id'], name: 'index_categories_on_user_id'
+  end
+
+  create_table 'categories_trade_records', id: false, force: :cascade do |t|
+    t.bigint 'category_id'
+    t.bigint 'trade_record_id'
+    t.index %w[category_id trade_record_id], name: 'index_categories_trade_records_on_ids', unique: true
+    t.index ['category_id'], name: 'index_categories_trade_records_on_category_id'
+    t.index ['trade_record_id'], name: 'index_categories_trade_records_on_trade_record_id'
   end
 
   create_table 'trade_records', force: :cascade do |t|
@@ -29,14 +39,25 @@ ActiveRecord::Schema[7.0].define(version: 20_230_530_185_411) do
     t.integer 'amount'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
+    t.bigint 'category_id', null: false
     t.index ['author_id'], name: 'index_trade_records_on_author_id'
+    t.index ['category_id'], name: 'index_trade_records_on_category_id'
   end
 
   create_table 'users', force: :cascade do |t|
     t.string 'name'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
+    t.string 'email', default: '', null: false
+    t.string 'encrypted_password', default: '', null: false
+    t.string 'reset_password_token'
+    t.datetime 'reset_password_sent_at'
+    t.datetime 'remember_created_at'
+    t.index ['email'], name: 'index_users_on_email', unique: true
+    t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
 
+  add_foreign_key 'categories', 'users'
+  add_foreign_key 'trade_records', 'categories'
   add_foreign_key 'trade_records', 'users', column: 'author_id'
 end
