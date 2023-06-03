@@ -1,0 +1,28 @@
+<%= render partial: 'shared/nav', locals: {title: "Transactions", url: categories_path , symbol: '<'} %>
+<div class='cat-page'>
+  <div class= 'cat-cont'> 
+  <div class='t-r' >
+  <div class="t-category">
+        <img src='<%= @category.icon%>' class='t-logo' />
+        <div class='cat-name- total'>
+        <br/>
+        <%="#{@category.name}"%>
+        </div>
+        </div>
+       <p class='t-date'>
+        Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.
+        </p>
+      </div>
+<!-- Display trade records -->
+<% @trade_records.each do |trade_record| %>
+  <div class='t-r'><%= trade_record.name %> N° <%= trade_record.id %>
+  <br/>
+  <p class='t-date'><%= trade_record.created_at.strftime('%d %b, %Y') %></p>
+  </div>
+<% end %>
+</div>
+
+<!-- Add Trade Record button -->
+<button><%= link_to "Add Trade Record", new_category_trade_record_path(@category)%></button>
+
+</div>

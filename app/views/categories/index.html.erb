@@ -1,0 +1,26 @@
+<%= render partial: 'shared/nav', locals: {title: 'Categories', url: unauthenticated_root_path , symbol: '☰'} %>
+<div class='cat-page'>
+  <div class= 'cat-cont'>      
+    <% @categories.each do |category| %>
+      <div class="category">
+        <img src='<%= category.icon%>' />
+        <div class= 'c-n-t-cont'>
+        <div class='cat-name- total'>
+        <br/>
+        <%=link_to "#{category.name}", category_trade_records_path(category),class: 'c-name'  %>
+        <p class='amount'>
+        <%=" $#{category.total_trade_records_amount}"%>
+        </div>
+        </p>
+        <br/>
+        <br/>
+        <p class='t-date'>
+        <%= category.created_at.strftime('%d %b, %Y') %>
+        </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <button><%= link_to 'New Category', new_category_path %></button>
+</div>
+
