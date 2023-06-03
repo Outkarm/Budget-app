@@ -33,7 +33,7 @@
 
 **[Buget App]** is a classic example of a blog website. It is a functional website that show the list of Categories and associated operations to each categories.
 
-**[Video Description](https://www.loom.com/share/2c221fd0bb4740f08c89f5584010d557)**
+**[Video Description](https://drive.google.com/file/d/1R-GI7cmCG04wLd3bvoDH8fmlJsp5wSMx/view?usp=drive_link)**
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -81,7 +81,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-<!-- [Live Demo Link]() -->
+[Live Demo Link](https://budgetapp-fnyd.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
