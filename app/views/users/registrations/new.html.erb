@@ -1,28 +1,28 @@
 <%= render partial: 'shared/nav', locals: {title: 'Sign Up', url: unauthenticated_root_path , symbol: '<'} %>
 <div class='splash-page-c'>
-<div>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
+
 
   <div class="field">
     <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control", id: "exampleInputEmail1", placeholder: 'Name' %>
   </div>
-
+  <br/>
   <div class="field">
     <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "form-control", id: "exampleInputEmail1", placeholder: 'Email'  %>
   </div>
+    <br/>
 
   <div class="field">
     <% if @minimum_password_length %>
     <% end %>
     <%= f.password_field :password, autocomplete: "new-password",class: "form-control", id: "exampleInputEmail1", placeholder: 'Password (6 characters minimum)' %>
   </div>
-
+  <br/>
   <div class="field">
     <%= f.password_field :password_confirmation, autocomplete: "new-password" ,class: "form-control", id: "exampleInputEmail1", placeholder: 'Password confirmation' %>
-  </div>
-  <%= render "users/shared/links" %>
-</div>
+  </div>  <br/>
+  <%= render "users/shared/links"%>
 
   <div class="actions">
     <%= f.submit "Sign up" , class: 'btn btn-primary b-w-c' %>
