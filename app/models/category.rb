@@ -6,6 +6,6 @@ class Category < ApplicationRecord
   validates :name, presence: true, uniqueness: { scope: :user_id }
 
   def total_trade_records_amount
-    trade_records.sum(&:amount)
+    trade_records.sum(:amount)
   end
 end

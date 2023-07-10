@@ -1,30 +1,28 @@
 <%= render partial: 'shared/nav', locals: {title: 'New Transaction', url: category_trade_records_path , symbol: '<'} %>
-<div class='cat-page'>
-<div class= 'cat-cont ccp'>       
-<%= form_with model: @trade_record, url: category_trade_records_path(@category) do |form| %>
-  <div>
-    <%= form.text_field :name, class: "form-control", placeholder: 'Name' %>
-  </div>
-
-  <div>
-    <%= form.number_field :amount, class: "form-control", placeholder: 'Amount ($)' %>
-  </div>
-
-  <div class="form-check">
-    <%= form.label :category_ids, "Categories" %>
-    <% Category.all.each do |category| %>
-      <div>
-        <%= check_box_tag 'trade_record[category_ids][]', category.id, @trade_record.category_ids.include?(category.id), class: 'form-check-input', id: "flexCheckDefault" %>
-        <%= label_tag "trade_record_category_ids_#{category.id}", category.name, class: "form-check-label", for:"flexCheckDefault" %>
-      </div>
-    <% end %>
-  </div>
-  </div>
-<br/>
-<p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-  <div>
-    <%= form.submit "Create Trade Record",class: 'btn btn-primary  b-w-c-g' %>
-  </div>
-<% end %>
+<div class='cat-page'>  
+  <%= form_with model: @trade_record, url: category_trade_records_path(@category) do |form| %>
+    <div>
+      <%= form.text_field :name, class: "form-control", placeholder: 'Name' %>
+    </div>
+    <br/>
+    <div>
+      <%= form.number_field :amount, class: "form-control", placeholder: 'Amount ($)' %>
+    </div>
+    <br/>
+    <div class="form-check cat-list">
+      <%= form.label :category_ids, "Categories" %>
+      <% @categories.each do |category| %>
+        <div>
+          <%= check_box_tag 'trade_record[category_ids][]', category.id, @trade_record.category_ids.include?(category.id), class: 'form-check-input', id: "category_#{category.id}" %>
+          <%= label_tag "category_#{category.id}", category.name, class: "form-check-label" %>
+        </div>
+      <% end %>
+    </div>
+    <br/>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <div class="actions">
+      <%= form.submit "Create Trade Record", class: 'btn btn-primary b-w-c-g' %>
+    </div>
+  <% end %>
 </div>

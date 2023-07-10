@@ -1,12 +1,19 @@
 class TradeRecordsController < ApplicationController
   before_action :set_category
+  before_action :set_user
 
   def index
     @trade_records = TradeRecord.includes(:category).where(category_id: @category.id)
   end
 
   def new
-    @trade_record = @category.trade_records.new
+    @user = current_user
+    @categories = @user.categories.includes(:trade_records)
+    @trade_record = @user.categories.build.trade_records.new
+    return unless @categories.empty?
+
+    flash[:error] = 'No categories found. Please create categories first.'
+    redirect_to new_category_trade_record_path
   end
 
   def create
@@ -40,5 +47,9 @@ class TradeRecordsController < ApplicationController
 
   def set_category
     @category = Category.includes(:trade_records).find(params[:category_id])
+  end
+
+  def set_user
+    @user = current_user
   end
 end

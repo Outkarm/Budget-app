@@ -7,11 +7,12 @@
       <div class="field">
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", id: "exampleInputEmail1", placeholder: 'Email'  %>
       </div>
+      <br/>
 
         <div class="field">
           <%= f.password_field :password, autocomplete: "current-password", class: "form-control", id: "exampleInputEmail1", placeholder: 'Password'  %>
         </div>
-
+  <br/>
         <% if devise_mapping.rememberable? %>
           <div class="field">
             <%= f.check_box :remember_me %>
@@ -23,7 +24,7 @@
 
 
       <div class="actions">
-        <%= f.submit "Log in"%>
+        <%= f.submit "Log in",class: 'btn btn-primary b-w-c'%>
       </div>
   <% end %>
 

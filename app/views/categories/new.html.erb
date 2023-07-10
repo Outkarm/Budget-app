@@ -1,6 +1,6 @@
 <%= render partial: 'shared/nav', locals: {title: 'New Category', url: unauthenticated_root_path , symbol: '<'} %>
 <div class='cat-page'>
-<div class= 'cat-cont'> 
+
 <%= form_for @category do |f| %>
 <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
@@ -13,8 +13,7 @@
     <%= f.label :icon %>
     <%= f.file_field :icon, class: "form-control" %>
   </div>
-  </div>
 <br/>
-  <%= f.submit "Create Category", class: "btn btn-primary b-w-c-g" %>
+  <%= f.submit "Create Category", class: "btn btn-primary b-w-c-g actions" %>
 <% end %>
 </div>
